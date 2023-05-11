@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Final_Project_Tangchol</title>
+		<meta name="Jefie Tangchol" content="HTML, Finals Lab">
+		<link rel="stylesheet" type="text/css" href="..//styles/index.css">
+
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+
+				box-sizing: border-box;
+
+				font-family: "Baloo Bhai 2", cursive;
+			}
+
+			nav {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1rem 2rem;
+
+				background-color: #262626;
+
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 9999;
+				overflow: hidden;
+			}
+
+			ul {
+				display: flex;
+				list-style: none;
+			  
+				color: #fff;
+				gap: 2rem;
+				position: fixed;
+				right: 0;
+				padding-right: 15px;
+			}
+
+			nav a {
+				color: white;
+				text-decoration: none;
+			}
+
+			a:hover {
+				background-color: rgb(22, 22, 94);
+				border-radius: 10px;
+				padding: 10px;
+			}
+
+			.logo {
+				justify-content: flex-start;
+				align-items: flex-start;
+				font-size: 2rem;
+				color: #fff;
+
+				margin-right: 700px;
+			}
+
+			.btn {
+				margin-top: 30px;
+
+				color: white;
+				cursor: pointer;
+				border-radius: 25px;
+				padding: 1rem 2rem;
+			}
+
+			img {
+				width: 100%;
+
+				object-fit: cover;
+				object-position: center;
+			}
+			
+			header {
+				background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+				url(https://scontent.fcrk2-2.fna.fbcdn.net/v/t39.30808-6/278667637_929833757683106_6911244765481296038_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEt9uQV4mW6QRROHXAOCDLZX3uzveFCqTxfe7O94UKpPB-ULPWVPUOxDhiiWgFA-Fe_OqOQjigX0fWogTsUa_rz&_nc_ohc=BtTcQCYvd2wAX9Y0uD7&_nc_ht=scontent.fcrk2-2.fna&oh=00_AfCiFdsR3qKkpFl6n0MBl4lrXfsqBfFc0A4KHPHAEw9Tnw&oe=644EBEB2);
+				background-position: center;
+				background-size: cover;
+
+				height: 100vh;
+			}
+
+			#home {
+				display: flex;
+
+				text-align: center;
+				flex-direction: column;
+				padding: 220px 200px;
+				color: #fff;
+				justify-content: center;
+				align-items: center;
+
+				text-align: center;
+			}
+
+			.overlay {
+				background: rgb(0, 0, 0, -5);
+				height: 100vh;
+			}
+
+			#mobile {
+				display: none;
+				height: 70px;
+				line-height: 40px;
+			 
+				background-color: #262626;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 9999;
+				overflow: hidden;
+			}
+
+			#mobile ul li {
+				justify-content: flex-end;
+				padding: -25px 5px;
+				margin: -38px 0;
+				font-size: 1rem;
+				color: white;
+			}
+			#mobile ul li a {
+				display: flex;
+				text-decoration: none;
+				color: white;
+			}
+
+			@media screen and (max-width: 768px) {
+			#mobile {
+				display: block;
+			}
+
+			#navbar {
+				display: none;
+			}
+
+			#home {
+				display: flex;
+
+				margin-top: 20px;
+
+				text-align: center;
+
+				color: #fff;
+				justify-content: center;
+				align-items: center;
+
+				text-align: center;
+			}
+
+			.logo1 {
+				justify-content: flex-start;
+				align-items: flex-start;
+				font-size: 1.8rem;
+				color: #fff;
+
+				margin-left: 20px;
+				margin-right: 500px;
+				margin-top: 15px;
+			}
+
+			a:hover {
+				background-color: rgb(22, 22, 94);
+				border-radius: 16px;
+				padding: 6px 8px 6px 8px;
+				margin: -7px;
+			}
+
+			header {
+				background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+				url(https://scontent.fcrk2-2.fna.fbcdn.net/v/t39.30808-6/278667637_929833757683106_6911244765481296038_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEt9uQV4mW6QRROHXAOCDLZX3uzveFCqTxfe7O94UKpPB-ULPWVPUOxDhiiWgFA-Fe_OqOQjigX0fWogTsUa_rz&_nc_ohc=BtTcQCYvd2wAX9Y0uD7&_nc_ht=scontent.fcrk2-2.fna&oh=00_AfCiFdsR3qKkpFl6n0MBl4lrXfsqBfFc0A4KHPHAEw9Tnw&oe=644EBEB2);
+				background-position: center;
+				background-size: cover;
+
+				height: 180vh;
+			  }
+			}
+
+			.title {
+				text-align: center;
+				width: 100%;
+				color: yellow;
+			}
+
+			#menu {
+				padding: 0;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				grid-gap: 20px 40px;
+				background: rgb(245, 242, 242);
+				min-height: 100vh;
+			 
+			}
+
+			.heading {
+				background: rgb(245, 242, 242);
+				color: #373333;
+				margin-bottom: 30px;
+				padding: 60px 0 30px 0;
+				grid-column: 1/-1;
+				text-align: center;
+			}
+
+			.heading > h3 {
+				font-weight: 600;
+				font-size: 22px;
+				letter-spacing: 5px;
+			}
+
+			.card {
+				display: grid;
+				position: relative;
+				grid-template-rows: auto 1fr;
+				border-radius: 15px;
+				box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+				margin: 10px 20px;
+			}
+
+			.card img {
+				position: relative;
+				width: 100%;
+				height: 50vh;
+				border-radius: 15px 15px 0 0;
+			}	
+
+			.details {
+				padding: 20px 10px;
+				display: grid;
+				grid-template-rows: auto 1fr 50px;
+				grid-row-gap: 15px;
+			}
+
+			.details-sub {
+				display: grid;
+				grid-template-columns: auto auto;
+			}
+
+			.details-sub h5 {
+				font-weight: 600;
+				font-size: 18px;
+			}
+
+			.price {
+				text-align: right;
+			}
+
+			.details p {
+				color: #6f6f6f;
+				font-size: 15px;
+				line-height: 25px;
+				align-self: stretch;
+			}
+
+			.details button {
+			  
+				border: none;
+				color: #ffffff;
+				font-size: 16px;
+				font-weight: 600;
+				border-radius: 7px;
+				width: 180px;
+			}
+
+			#about {
+				padding: 25px 0;
+				
+			}	
+			.about_row {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				padding: 0 100px;
+			}
+
+			.about_column {
+				flex: 1;
+			}
+
+			#btn1 {
+				margin-top: 20px;
+				padding: 10px 10px;
+				border-radius: 15px;
+			}
+
+			.about_column img {
+				width: 500px;
+				height: 500px;
+				border-radius: 50%;
+				object-fit: fill;
+				margin: auto;
+			}
+
+			.title {
+				color: #373333;
+				margin-bottom: 30px;
+				padding: 50px 0 30px 0;
+				text-align: center;
+			}
+
+			#contact {
+				background: rgb(245, 242, 242);
+				color: white;
+				min-height: 100vh;
+			}
+
+			.title1 {
+				color: #373333;
+				margin-bottom: 30px;
+				padding: 50px 0 30px 0;
+				text-align: center;
+			}
+
+			form {
+				width: 450px;
+				background-color: white;
+
+				box-shadow: 0 0 20px 0 rgb(213, 212, 210);
+				margin: auto;
+				margin-top: -20px;
+				margin-bottom: 10px;
+				border-radius: 20px;
+			}
+
+			.inp_box {
+				width: 350px;
+				height: 37px;
+			 
+				margin: 25px 45px 0 45px;
+
+				padding: 0 10px;
+				border-radius: 14px;
+				border: 1px solid #777;
+				outline: none;
+			}
+
+			.text_area {
+				height: 160px;
+				padding-top: 10px;
+			}
+
+			.btn2 {
+				border-radius: 20px;
+				margin: 20px 45px;
+				padding: 0 10px;
+			  
+				width: 30%;
+			}
+
+			textarea {
+				height: 150px;
+				padding-top: 10px;
+			}
+
+			.btn2 {
+				border-radius: 15px;
+				color: #fff;
+				margin-top: 18px;
+				padding: 10px;
+			}
+
+			button {
+				background-color: rgb(22, 22, 94);
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			button:hover {
+				background-color: rgb(94, 158, 61);
+			}
+
+			footer {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 1rem 2rem;
+				width: 100%;
+				background-color: #262626;
+				color: white;
+			}
+
+			* {
+				padding: 0;
+				margin: 0;
+
+				box-sizing: border-box;
+
+				font-family: "Baloo Bhai 2", cursive;
+			}
+
+			nav {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1rem 2rem;
+
+				background-color: #262626;
+
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 9999;
+				overflow: hidden;
+			}
+
+			ul {
+				display: flex;
+				list-style: none;
+			  
+				color: #fff;
+				gap: 2rem;
+				position: fixed;
+				right: 0;
+				padding-right: 15px;
+			}
+
+			nav a {
+				color: white;
+				text-decoration: none;
+			}
+
+			a:hover {
+				background-color: rgb(22, 22, 94);
+				border-radius: 10px;
+				padding: 10px;
+			}
+
+			.logo {
+				justify-content: flex-start;
+				align-items: flex-start;
+				font-size: 2rem;
+				color: #fff;
+
+				margin-right: 700px;
+			}
+
+			.btn {
+				margin-top: 30px;
+
+				color: white;
+				cursor: pointer;
+				border-radius: 25px;
+				padding: 1rem 2rem;
+			}
+
+			img {
+				width: 100%;
+
+				object-fit: cover;
+				object-position: center;
+			}
+
+			header {
+				background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+				url(https://scontent.fcrk2-2.fna.fbcdn.net/v/t39.30808-6/278667637_929833757683106_6911244765481296038_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEt9uQV4mW6QRROHXAOCDLZX3uzveFCqTxfe7O94UKpPB-ULPWVPUOxDhiiWgFA-Fe_OqOQjigX0fWogTsUa_rz&_nc_ohc=BtTcQCYvd2wAX9Y0uD7&_nc_ht=scontent.fcrk2-2.fna&oh=00_AfCiFdsR3qKkpFl6n0MBl4lrXfsqBfFc0A4KHPHAEw9Tnw&oe=644EBEB2);
+				background-position: center;
+				background-size: cover;
+
+				height: 100vh;
+			}
+
+			#home {
+				display: flex;
+
+				text-align: center;
+				flex-direction: column;
+				padding: 220px 200px;
+				color: #fff;
+				justify-content: center;
+				align-items: center;
+
+				text-align: center;
+			}
+
+			.overlay {
+				background: rgb(0, 0, 0, -5);
+				height: 100vh;
+			}
+
+			#mobile {
+				display: none;
+				height: 70px;
+				line-height: 40px;
+			  
+				background-color: #262626;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 9999;
+				overflow: hidden;
+			}
+
+			#mobile ul li {
+				justify-content: flex-end;
+				padding: -25px 5px;
+				margin: -38px 0;
+				font-size: 1rem;
+				color: white;
+			}
+
+			#mobile ul li a {
+				display: flex;
+				text-decoration: none;
+				color: white;
+			}
+
+			@media screen and (max-width: 768px) {
+			#mobile {
+				display: block;
+			}
+
+			#navbar {
+				display: none;
+			}
+
+			#home {
+				display: flex;
+
+				margin-top: 20px;
+
+				text-align: center;
+
+				color: #fff;
+				justify-content: center;
+				align-items: center;
+
+				text-align: center;
+			}
+
+			.logo1 {
+				justify-content: flex-start;
+				align-items: flex-start;
+				font-size: 1.8rem;
+				color: #fff;
+
+				margin-left: 20px;
+				margin-right: 500px;
+				margin-top: 15px;
+			}
+
+			a:hover {
+				background-color: rgb(22, 22, 94);
+				border-radius: 16px;
+				padding: 6px 8px 6px 8px;
+				margin: -7px;
+			}
+
+			header {
+				background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+				url(https://scontent.fcrk2-2.fna.fbcdn.net/v/t39.30808-6/278667637_929833757683106_6911244765481296038_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEt9uQV4mW6QRROHXAOCDLZX3uzveFCqTxfe7O94UKpPB-ULPWVPUOxDhiiWgFA-Fe_OqOQjigX0fWogTsUa_rz&_nc_ohc=BtTcQCYvd2wAX9Y0uD7&_nc_ht=scontent.fcrk2-2.fna&oh=00_AfCiFdsR3qKkpFl6n0MBl4lrXfsqBfFc0A4KHPHAEw9Tnw&oe=644EBEB2);
+				background-position: center;
+				background-size: cover;
+
+				height: 180vh;
+			  }
+			}
+
+			.title {
+				text-align: center;
+				width: 100%;
+				color: yellow;
+			}
+
+			#menu {
+				padding: 0;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				grid-gap: 20px 40px;
+				background: rgb(245, 242, 242);
+				min-height: 100vh;
+			  
+			}
+
+			.heading {
+				background: rgb(245, 242, 242);
+				color: #373333;
+				margin-bottom: 30px;
+				padding: 60px 0 30px 0;
+				grid-column: 1/-1;
+				text-align: center;
+			}
+
+			.heading > h3 {
+				font-weight: 600;
+				font-size: 22px;
+				letter-spacing: 5px;
+			}
+
+			.card {
+				display: grid;
+				position: relative;
+				grid-template-rows: auto 1fr;
+				border-radius: 15px;
+				box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+				margin: 10px 20px;
+			}
+
+			.card img {
+				position: relative;
+				width: 100%;
+				height: 50vh;
+				border-radius: 15px 15px 0 0;
+			}
+
+			.details {
+				padding: 20px 10px;
+				display: grid;
+				grid-template-rows: auto 1fr 50px;
+				grid-row-gap: 15px;
+			}
+
+			.details-sub {
+				display: grid;
+				grid-template-columns: auto auto;
+			}
+
+			.details-sub h5 {
+				font-weight: 600;
+				font-size: 18px;
+			}
+
+			.price {
+				text-align: right;
+			}
+
+			.details p {
+				color: #6f6f6f;
+				font-size: 15px;
+				line-height: 25px;
+				align-self: stretch;
+			}
+
+			.details button {
+			  
+				border: none;
+				color: #ffffff;
+				font-size: 16px;
+				font-weight: 600;
+				border-radius: 7px;
+				width: 180px;
+			}
+
+			#about {
+				padding: 25px 0;
+			}
+
+			.about_row {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				padding: 0 100px;
+			}
+
+			.about_column {
+				flex: 1;
+			}
+
+			#btn1 {
+				margin-top: 20px;
+				padding: 10px 10px;
+				border-radius: 15px;
+			}
+
+			.about_column img {
+				width: 500px;
+				height: 500px;
+				border-radius: 50%;
+				object-fit: fill;
+				margin: auto;
+			}
+
+			.title {
+				color: #373333;
+				margin-bottom: 30px;
+				padding: 50px 0 30px 0;
+				text-align: center;
+			}
+
+			#contact {
+				background: rgb(245, 242, 242);
+				color: white;
+				min-height: 100vh;
+			}
+
+			.title1 {
+				color: #373333;
+				margin-bottom: 30px;
+				padding: 50px 0 30px 0;
+				text-align: center;
+			}
+
+			form {
+				width: 450px;
+				background-color: white;
+
+				box-shadow: 0 0 20px 0 rgb(213, 212, 210);
+				margin: auto;
+				margin-top: -20px;
+				margin-bottom: 10px;
+				border-radius: 20px;
+			}
+
+			.inp_box {
+				width: 350px;
+				height: 37px;
+			 
+				margin: 25px 45px 0 45px;
+
+				padding: 0 10px;
+				border-radius: 14px;
+				border: 1px solid #777;
+				outline: none;
+			}
+
+			.text_area {
+				height: 160px;
+				padding-top: 10px;
+			}
+
+			.btn2 {
+				border-radius: 20px;
+				margin: 20px 45px;
+				padding: 0 10px;
+			 
+				width: 30%;
+			}
+
+			textarea {
+				height: 150px;
+				padding-top: 10px;
+			}
+
+			.btn2 {
+				border-radius: 15px;
+				color: #fff;
+				margin-top: 18px;
+				padding: 10px;
+			}
+
+			button {
+				background-color: rgb(22, 22, 94);
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			button:hover {
+				background-color: rgb(94, 158, 61);
+			}
+
+			footer {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 1rem 2rem;
+				width: 100%;
+				background-color: #262626;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<header>
+				<nav id="navbar">
+					<div class="logo"><span>REWIND CAFE</span></div>
+						<ul>
+							<li><a href="#home">HOME</a></li>
+							<li><a href="#about">ABOUT</a></li>
+							<li><a href="#menu">MENU</a></li>
+							<li><a href="#REGISTER HERE">REGISTRATION</a></li>
+						</ul>
+				</nav>
+					
+					<div id="mobile">
+						<div class="logo1"><span>REWIND CAFE</span></div>
+							<ul>
+								<li><a href="#home">HOME</a></li>
+								<li><a href="#about">ABOUT</a></li>
+								<li><a href="#menu">MENU</a></li>
+								<li><a href="#REGISTER HERE">REGISTRATION</a></li>
+							</ul>
+					</div>
+			
+					<div class="overlay">
+						<section id="home">
+							<h1 class="h-primary">WELCOME TO REWIND CAFE</h1>
+							<br>
+							<p>"REWIND CAFE is a great place to unwind and relax. It's a perfect spot to take a break from life's everyday stresses and enjoy some delicious food and refreshing drinks." - Unknown </p>
+						</section>
+					</div>
+			</header>
+
+			<br>
+			<br>
+			<br>
+			
+			<div id="about">
+				<h1 class="title">ABOUT US</h1>
+					<div class="about_row">
+						<div class="about_column">
+							<p>REWIND Café grounds itself in the “appreciation of roots, traditional value, and heritage.” The place is founded by Cordilleran natives from Ifugao and Kapangan but was born and raised in Baguio. I would say that I go to REWIND Café not just for the food that they offer (more on that later), but mainly for the vibe that it gives you once you’re inside. Upon first look, you’d notice that it’s a simple house with a simple Baguio feel added to it. However, the place is a goldmine for those looking for a historical journey back to the Baguio that is and was. It made me rediscover the city that I grew up.</p>
+							<br>
+							<br>
+							<p>REWIND Café, owned by Syl Ang, features a mini-museum that exhibits expertly-curated photos of old Baguio by the café’s team—Jason Ang, Michelle Cabatuan, Liza Imayaho, Melody Imayaho, Sherwin Cabatuan and Matthew Imayaho. The images come from the collection of US Missionary (and Baguio Boy by heart) Kevin Engle and our very own Media Newseum owner and Baguio artist, Art Tibaldo. Seriously, walking around the place makes you forget what year it is. More so, because REWIND encourages their visitors and customers to savor their moment in the place, without being glued to their smartphones. That’s why once you come in, you won’t have to ask for Wi-Fi because there isn’t. It’s a good thing in itself because you’ll have more time to appreciate everything around you once you’re there.</p>
+						</div>
+						<div class="about_column">
+							<img src="src/R2.jpg">
+						</div>
+					</div>
+
+			<br>
+			<br>
+			<br>
+			
+				<div id="menu">
+					<div class="heading">
+						<h1>MENU</h1>
+						<h1 align="left">SNACKS</h1>
+					</div>
+					
+				<div class="card">
+					<img src="src/R3.jpg">
+						<div class="details">
+							<div class="details-sub">
+								<h5>NACHOS</h5>
+								<h5 class="price">Php 180</h5>
+							</div>
+								<button>Add To Cart</button>
+						</div>
+				</div>
+
+				<div class="card">
+					<img src="src/R4.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>CHICKEN QUESADILLA</h5>
+							<h5 class="price">Php 110</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="src/R5.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>CHEEZY SHOE STRING FRIES</h5>
+							<h5 class="price">Php 80</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="src/J1.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>BLUEBERRY CHEESE CAKE</h5>
+							<h5 class="price">Php 120</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/J2.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>ONION RINGS</h5>
+							<h5 class="price">Php 150</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/J3.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>CHEESE STICKS</h5>
+							<h5 class="price">Php 145</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="heading">
+					<h1 align="left">PASTA</h1>
+				</div>
+			
+				<div class="card">
+					<img src="src/J4.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>ITALIAN TOMATO PASTA</h5>
+							<h5 class="price">Php 155</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/J5.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>TUNA CREAM PASTA</h5>
+							<h5 class="price">Php 195</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/J6.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>CARBONARA</h5>
+							<h5 class="price">Php 155</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/J7.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>SEAFOOD PASTA</h5>
+							<h5 class="price">Php 190</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/J8.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>GARLIC PASTA</h5>
+							<h5 class="price">Php 150</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/J9.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>KINI-ING CARBONARA</h5>
+							<h5 class="price">Php 155</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="heading">
+					<h1 align="left">RICE MEALS</h1>
+				</div>
+			
+				<div class="card">
+					<img src="src/R6.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>CHICKEN FILLET</h5>
+							<h5 class="price">Php 180</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="src/R7.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>REWIND'S PINAPAITAN</h5>
+							<h5 class="price">Php 150 </h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="src/R8.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>SIZZLING TOFU</h5>
+							<h5 class="price">Php 150</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/R9.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>GRILLED PORK LIEMPO</h5>
+							<h5 class="price">Php 175</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/R10.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>CREAMY BEEF</h5>
+							<h5 class="price">Php 190</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/R11.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>BONELESS BANGUS</h5>
+							<h5 class="price">Php 170</h5>
+						</div>
+							<button>Add To Cart</button>
+					</div>
+				</div>
+			
+				<div class="heading">
+					<h1 span style="float: left;">HOT COFFEE</span></h1>
+					<h1 span style="float: center;">FIZZY DRINKS</span><span style="float: right;">MILK TEA</span></h1>
+				</div>
+			
+				<div class="card">
+					<img src="src/M1.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>ESPRESSO<h5 class="price">Php 85 <button>Add To Cart</button></h5></h5>
+							<h5>IRISH COFFEE<h5 class="price">Php 95 <button>Add To Cart</button></h5></h5>
+							<h5>MACCHIATO<h5 class="price">Php 120 <button>Add To Cart</button></h5></h5>
+							<h5>CAPPUCCINO<h5 class="price">Php 130 <button>Add To Cart</button></h5></h5>
+						</div>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/M2.jpg">
+					<div class="details">
+						<div class="details-sub">
+							<h5>LYCHEE<h5 class="price">Php 70 <button>Add To Cart</button></h5></h5>
+							<h5>HONEY DEW<h5 class="price">Php 70 <button>Add To Cart</button></h5></h5>
+							<h5>BLUEBERRY<h5 class="price">Php 70 <button>Add To Cart</button></h5></h5>
+							<h5>STRAWBERRY<h5 class="price">Php 70 <button>Add To Cart</button></h5></h5>
+						</div>
+					</div>
+				</div>
+			
+				<div class="card">
+					<img src="src/M3.jpg">
+						<div class="details">
+							<div class="details-sub">
+								<h5>CLASSIC<h5 class="price">Php 95 <button>Add To Cart</button></h5></h5>
+								<h5>OKINAWA<h5 class="price">Php 95 <button>Add To Cart</button></h5></h5>
+								<h5>WINTERMELON<h5 class="price">Php 85 <button>Add To Cart</button></h5></h5>
+								<h5>MATCHA<h5 class="price">Php 95 <button>Add To Cart</button></h5></h5>
+							</div>
+						</div>
+				</div>
+			</div>  
+        </div>
+		
+		<br>
+		<br>
+		<br>
+        <div id="REGISTER HERE">
+            <h1 class="title1">REGISTRATION</h1>
+				<form action="">
+					<input type="text" class="inp_box" placeholder="Name:">
+					<input type="email" class="inp_box" placeholder="Email:">
+					<textarea type="text" class="inp_box text_area" placeholder="Address:"></textarea>
+					<button class="btn2">Submit</button>
+				</form>
+        </div>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div>
+            <h3>References:</h3>
+					<p>Burgess, S. (n.d.). REWIND CAFE. Retrieved from Unsplash: https://unsplash.com/photos/VEiU0Kj-_F8</p>
+					<p>Lyn, N. (n.d.). Food. Retrieved from Unsplash: https://unsplash.com/photos/gGdLY2y7KjQ</p>
+					<p>Lyn, N. (n.d.). Relaxing Room. Retrieved from Unsplash: https://unsplash.com/photos/Y_XOfp</p>
+		</div>
+       
+		</div>
+		<br>
+		<br>
+		<br>
+    <footer>
+        <div>
+            <p>
+                Designed by Tangchol, Jefie L.
+            </p>
+        </div>
+    </footer>
+    </div>
+
+	</body>
+</html>
